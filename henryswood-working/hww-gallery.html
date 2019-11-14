@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="gallery.css">
+    <title>Henry's Woodworking - Gallery</title>
+
+</head>
+
+<body>
+<header>
+    <ul>
+        <li><img class="logo" style="  width: 30%; height: auto;" src="img/logo4.png" href="image_only.html"/></li>
+        <li><a href="image_only.html">Home</a></li>
+        <li><a href="hww-about.html">About</a></li>
+        <li><a href="hww-services.html">Services</a></li>
+        <li><a class="active" href="hww-gallery.html">Gallery</a></li>
+        <li><a href="hww-contact.html">Contact</a></li>
+    </ul>
+</header>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 13</div>
+        <img src="img/img1.jpg" style="width:100%">
+        <div class="text">Rough Sawn Vanity</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 13</div>
+        <img src="img/maple-vanity.jpg" style="width:100%">
+        <div class="text">Maple Vanity</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 13</div>
+        <img src="img/pine-vanity.jpg" style="width:100%">
+        <div class="text">Pine Vanity</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 13</div>
+        <img src="img/oak-vanity.jpg" style="width:100%">
+        <div class="text">Oak Vanity</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 13</div>
+        <img src="img/rustric-birch.jpg" style="width:100%">
+        <div class="text">Rustic Birch Vanity</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">6 / 13</div>
+        <img src="img/mirror-frame.jpg" style="width:100%">
+        <div class="text">Mirror Frame</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">7 / 13</div>
+        <img src="img/bedroom.jpg" style="width:100%">
+        <div class="text">Bedroom Furniture</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">8 / 13</div>
+        <img src="img/bar.jpg" style="width:100%">
+        <div class="text">Oak Sawn Bar</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">9 / 13</div>
+        <img src="img/bar2.jpg" style="width:100%">
+        <div class="text">Maple Sawn Bar</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">10 / 13</div>
+        <img src="img/table.jpg" style="width:100%">
+        <div class="text">Table</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">11 / 13</div>
+        <img src="img/cabinets.jpg" style="width:100%">
+        <div class="text">Kitchen Cabinets</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">12 / 13</div>
+        <img src="img/caskets.jpg" style="width:100%">
+        <div class="text">Casket</div>
+    </div>
+
+
+    <div class="mySlides fade">
+        <div class="numbertext">13 / 13</div>
+        <img src="img/urn.jpg" style="width:100%">
+        <div class="text">Urn</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" galleyeractive", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " galleyeractive";
+    }
+</script>
+</body>
